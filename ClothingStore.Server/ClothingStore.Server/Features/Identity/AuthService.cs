@@ -7,7 +7,7 @@
 
     using Microsoft.IdentityModel.Tokens;
 
-    public class IdentityService : IIdentityService
+    public class AuthService : IAuthService
     {
         public string GenerateJwtToken(string userId, string username, string secret)
         {

@@ -1,0 +1,41 @@
+<div class="account-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-3"></div>
+            <div class="col-sm-6 col-md-6">
+                <div id="account-id">
+                    <h4 class="account-title"><span class="fa fa-chevron-right"></span>Register</h4>
+                    <div class="account-form">
+                        <form class="form-login" [formGroup]="registerForm">
+                            
+                            <ul class="form-list row">
+                                <li class="col-md-12 col-sm-12">
+                                    <label>Username <em>*</em></label>
+                                    <input class="input-text" type="text">
+                                </li>
+                                <li class="col-md-12 col-sm-12">
+                                    <label>Email <em>*</em></label>
+                                    <input class="input-text" type="email">
+                                </li>
+                                <div formGroupName="passwords">
+                                    <li class="col-md-12 col-sm-12">
+                                        <label>Your password <em>*</em></label>
+                                        <input class="input-text" type="password" formControlName="password">
+                                    </li>
+                                    <li class="col-md-12 col-sm-12">
+                                        <label>Confirm Password <em>*</em></label>
+                                        <input class="input-text" type="password" formControlName="repeatPassword">
+                                    </li>
+                                </div>
+                                <div *ngIf="registerForm.get('passwords')?.errors?.passwordMatch">Passwords don't match</div>
+                            </ul>
+                            <div class="buttons-set">
+                                <button class="btn btn-lg btn-dark" type="submit"><span>Register</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
