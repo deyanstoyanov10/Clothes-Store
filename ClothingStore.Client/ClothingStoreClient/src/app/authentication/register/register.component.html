@@ -6,16 +6,18 @@
                 <div id="account-id">
                     <h4 class="account-title"><span class="fa fa-chevron-right"></span>Register</h4>
                     <div class="account-form">
-                        <form class="form-login" [formGroup]="registerForm">
-                            
+                        <form class="form-login" [formGroup]="registerForm" (ngSubmit)="register()">
                             <ul class="form-list row">
                                 <li class="col-md-12 col-sm-12">
                                     <label>Username <em>*</em></label>
-                                    <input class="input-text" type="text">
+                                    <input class="input-text" type="text" formControlName="username">
+                                    <div class="alert alert-danger" *ngIf="username.touched && username.errors?.required">This field is required!</div>
                                 </li>
                                 <li class="col-md-12 col-sm-12">
                                     <label>Email <em>*</em></label>
-                                    <input class="input-text" type="email">
+                                    <input class="input-text" type="email" formControlName="email">
+                                    <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">This field is required!</div>
+                                    <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">This is not valid email address!</div>
                                 </li>
                                 <div formGroupName="passwords">
                                     <li class="col-md-12 col-sm-12">
@@ -25,12 +27,13 @@
                                     <li class="col-md-12 col-sm-12">
                                         <label>Confirm Password <em>*</em></label>
                                         <input class="input-text" type="password" formControlName="repeatPassword">
+                                        <div class="alert alert-danger" *ngIf="registerForm.get('passwords')?.errors?.passwordMatch">Passwords don't match!</div>
+                                        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength">Password must be at least 6 symbols!</div>
                                     </li>
                                 </div>
-                                <div *ngIf="registerForm.get('passwords')?.errors?.passwordMatch">Passwords don't match</div>
                             </ul>
                             <div class="buttons-set">
-                                <button class="btn btn-lg btn-dark" type="submit"><span>Register</span></button>
+                                <button class="btn btn-lg btn-dark" type="submit" [disabled]="!registerForm.valid"><span>Register</span></button>
                             </div>
                         </form>
                     </div>

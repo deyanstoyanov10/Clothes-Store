@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="account-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-3"></div>
+            <div class="col-sm-6 col-md-6">
+                <div id="account-id">
+                    <h4 class="account-title"><span class="fa fa-chevron-right"></span>Login</h4>
+                    <div class="account-form">
+                        <form class="form-login" [formGroup]="loginForm" (ngSubmit)="login()">
+                            <ul class="form-list row">
+                                <li class="col-md-12 col-sm-12">
+                                    <label>Username <em>*</em></label>
+                                    <input class="input-text" type="text" formControlName="username">
+                                    <div class="alert alert-danger" *ngIf="username.touched && username.errors?.required">This field is required!</div>
+                                </li>
+                                <li class="col-md-12 col-sm-12">
+                                    <label>Password <em>*</em></label>
+                                    <input class="input-text" type="password" formControlName="password">
+                                    <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">This field is required!</div>
+                                </li>
+                            </ul>
+                            <div class="buttons-set">
+                                <button class="btn btn-lg btn-dark" type="submit" [disabled]="!loginForm.valid"><span>Login</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
