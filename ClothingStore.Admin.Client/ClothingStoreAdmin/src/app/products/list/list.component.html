@@ -1,0 +1,103 @@
+<section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Products Data</h1>
+          
+        </div>
+        <div class="col-sm-6">
+            <div class="pull-right">
+                <button class="btn btn-info"><i class="fas fa-plus-square"></i>&nbsp;Add Product</button>
+                <button class="btn bg-purple"><i class="fas fa-file-pdf"></i>&nbsp;Download catalog as PDF</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fas fa-trash-alt"></i>&nbsp;Delete (selected)</button>
+            </div>
+            
+          </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Products list</h3>
+          </div>
+          <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>#</th>
+                <th>Picture</th>
+                <th>Product Name</th>
+                <th>SKU</th>
+                <th>Price</th>
+                <th>Stock Quantity</th>
+                <th>Published</th>
+                <th>Edit</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+                <td>Win 95+</td>
+                <td>Win 95+</td>
+                <td>Win 95+</td>
+                <td> 4</td>
+                <td>X</td>
+                <td><a class="btn btn-warning" href="Edit/45"><i class="fas fa-pencil-alt"></i>&nbsp;Edit</a></td>
+              </tr>
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 5.0
+                </td>
+                <td>Win 95+</td>
+                <td>Win 95+</td>
+                <td>Win 95+</td>
+                <td>5</td>
+                <td>C</td>
+                <td><a class="btn btn-default" href="Edit/45"><i class="fas fa-pencil-alt"></i>&nbsp;Edit</a></td>
+              </tr>
+              <tr>
+                <td>Other browsers</td>
+                <td>All others</td>
+                <td>Win 95+</td>
+                <td>Win 95+</td>
+                <td>-</td>
+                <td>-</td>
+                <td>U</td>
+                <td><a class="btn btn-default" href="Edit/45"><i class="fas fa-pencil-alt"></i>&nbsp;Edit</a></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="modal-danger">
+    <div class="modal-dialog">
+      <div class="modal-content bg-danger">
+        <div class="modal-header">
+          <h4 class="modal-title">Delete selected products</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to perform this action?</p>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-light">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>

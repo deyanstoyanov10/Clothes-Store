@@ -4,12 +4,12 @@
     using ClothingStore.Server.Features.Identity.Models;
 
     using System.Threading.Tasks;
+    using System.Collections.Generic;
 
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Options;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Authorization;
-    using System.Collections.Generic;
 
     public class AuthController : ApiController
     {
