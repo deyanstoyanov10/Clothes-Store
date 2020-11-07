@@ -19,6 +19,26 @@ namespace ClothingStore.Server.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ClothingStore.Server.Data.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("ClothingStore.Server.Data.Models.Color", b =>
                 {
                     b.Property<int>("Id")
@@ -75,6 +95,9 @@ namespace ClothingStore.Server.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(2500)")
@@ -101,6 +124,8 @@ namespace ClothingStore.Server.Data.Migrations
                         .HasMaxLength(150);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -392,6 +417,15 @@ namespace ClothingStore.Server.Data.Migrations
                         .WithMany("Pictures")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ClothingStore.Server.Data.Models.Product", b =>
+                {
+                    b.HasOne("ClothingStore.Server.Data.Models.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 

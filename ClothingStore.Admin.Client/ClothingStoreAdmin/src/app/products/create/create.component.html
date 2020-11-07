@@ -1,1 +1,130 @@
-<p>create works!</p>
+<section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Add a New Product</h1>
+          
+        </div>
+        <div class="col-sm-6">
+            <div class="pull-right">
+                <a class="btn btn-info" routerLink="/products/create"><i class="fas fa-save"></i>&nbsp;Save</a>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-info"></i>&nbsp;Product info</h3>
+          </div>
+          <div class="card-body">
+            
+            <form class="form-horizontal">
+                <div class="card-body">
+                  <div class="form-group row">
+                      <div class="col-md-3">
+                        <label class="col-form-label" style="float: right;display: table;">Product Name</label>
+                      </div>
+                      <div class="col-md-9">
+                        <input type="text" class="form-control">
+                      </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-3">
+                      <label class="col-form-label" style="float: right;display: table;">Full Description</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="mb-3">
+                            <textarea class="textarea"
+                                      style="width: 100%; height: 400px; font-size: 14px; line-height: 40px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                      <label class="col-form-label" style="float: right;display: table;">Poduct Price</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="number" class="form-control" min="0.01" max="999999.00" step="0.01" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                      <label class="col-form-label" style="float: right;display: table;">Quantity</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="number" class="form-control" min="0" step="1" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                      <label class="col-form-label" style="float: right;display: table;">Status</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                      <label class="col-form-label" style="float: right;display: table;">Supplier Url</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                      <label class="col-form-label" style="float: right;display: table;">Sizes</label>
+                    </div>
+                    <div class="col-md-9">
+                        <select class="select2bs4" multiple="multiple"
+                          style="width: 100%;">
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>California</option>
+                            <option>Delaware</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Washington</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                      <label class="col-form-label" style="float: right;display: table;">Colors</label>
+                    </div>
+                    <div class="col-md-9">
+                        <select class="select2bs4" multiple="multiple"
+                          style="width: 100%;">
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>California</option>
+                            <option>Delaware</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Washington</option>
+                        </select>
+                    </div>
+                </div>
+
+                </div>
+              </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -33,6 +33,18 @@
               {
                 "input": "node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
               },
+              {
+                "input": "node_modules/admin-lte/plugins/summernote/summernote-bs4.css"
+              },
+              {
+                "input": "node_modules/admin-lte/plugins/select2/css/select2.min.css"
+              },
+              {
+                "input": "node_modules/admin-lte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
+              },
+			  {
+                "input": "node_modules/ngx-toastr/toastr.css"
+              },
               "src/styles.css"
             ],
             "scripts": [
@@ -46,6 +58,9 @@
               "node_modules/admin-lte/plugins/jquery-mapael/jquery.mapael.min.js",
               "node_modules/admin-lte/plugins/jquery-mapael/maps/usa_states.min.js",
               "node_modules/admin-lte/plugins/chart.js/Chart.min.js",
+              "node_modules/admin-lte/plugins/summernote/summernote-bs4.min.js",
+              "node_modules/admin-lte/plugins/bootstrap-switch/js/bootstrap-switch.min.js",
+              "node_modules/admin-lte/plugins/select2/js/select2.full.min.js",
               "node_modules/admin-lte/dist/js/pages/dashboard2.js"
             ]
           },

@@ -25,6 +25,10 @@
 
         public string SupplierUrl { get; set; }
 
+        public int CategoryId { get; set; }
+
+        public Category Category { get; set; }
+
         public ShoppingCartItem ShoppingCartItem { get; set; }
 
         public ICollection<Size> Sizes { get; set; }

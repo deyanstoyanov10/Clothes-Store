@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Error404Component } from './core/error404/error404.component';
-import { AuthGuardService } from './shared/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -11,6 +10,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
   },
   {
     path: 'products',

@@ -2,20 +2,23 @@
 {
     public class EntityConfigConstants
     {
-        public static int ProductTitleMaxLength = 150;
+        public const int ProductTitleMaxLength = 150;
 
-        public static int ProductDescriptionMaxLength = 2500;
+        public const int ProductDescriptionMaxLength = 2500;
 
-        public static int ProductSupplierUrlMaxLength = 2500;
-
-
-        public static int SizeNameMaxLength = 25;
-
-        public static int ColorNameMaxLength = 25;
-
-        public static int ColorHexMaxLength = 15;
+        public const int ProductSupplierUrlMaxLength = 2500;
 
 
-        public static int PicturePathMaxLength = 500;
+        public const int SizeNameMaxLength = 25;
+
+        public const int ColorNameMaxLength = 25;
+               
+        public const int ColorHexMaxLength = 15;
+               
+               
+        public const int PicturePathMaxLength = 500;
+               
+               
+        public const int CategoryNameMaxLength = 50;
     }
 }

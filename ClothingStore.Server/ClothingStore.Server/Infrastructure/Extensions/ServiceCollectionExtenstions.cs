@@ -3,6 +3,7 @@
     using Data;
     using Models;
     using Features.Identity;
+    using Features.Category;
 
     using System.Text;
 
@@ -80,7 +81,8 @@
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
                 => services
-                    .AddTransient<IAuthService, AuthService>();
+                    .AddTransient<IAuthService, AuthService>()
+                    .AddTransient<ICategoryService, CategoryService>();
 
         public static IServiceCollection AddSwagger(this IServiceCollection services)
             => services.AddSwaggerGen(c =>

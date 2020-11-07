@@ -6,12 +6,12 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 
 
-
 @NgModule({
   declarations: [
     ListComponent, 
     CreateComponent, 
-    EditComponent],
+    EditComponent
+  ],
   imports: [
     CommonModule,
     ProductsRoutingModule
