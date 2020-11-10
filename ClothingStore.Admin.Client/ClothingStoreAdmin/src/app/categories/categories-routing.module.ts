@@ -1,25 +1,25 @@
-import { ListComponent } from './list/list.component';
-import { EditComponent } from './edit/edit.component';
-import { CreateComponent } from './create/create.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService as AuthGuard } from '../shared/auth-guard.service';
+import { CategoriesCreateComponent } from './categories-create/categories-create.component';
+import { CategoriesEditComponent } from './categories-edit/categories-edit.component';
+import { CategoriesListComponent } from './categories-list/categories-list.component';
 
 
 const routes: Routes = [
     {
       path: 'list',
-      component: ListComponent,
+      component: CategoriesListComponent,
       canActivate : [AuthGuard]
     },
     {
         path: 'create',
-        component: CreateComponent,
+        component: CategoriesCreateComponent,
         canActivate : [AuthGuard]
     },
     {
         path: ':id/edit',
-        component: EditComponent,
+        component: CategoriesEditComponent,
         canActivate : [AuthGuard]
     },
     {

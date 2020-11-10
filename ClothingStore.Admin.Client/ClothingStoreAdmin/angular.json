@@ -42,7 +42,7 @@
               {
                 "input": "node_modules/admin-lte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
               },
-			  {
+			        {
                 "input": "node_modules/ngx-toastr/toastr.css"
               },
               "src/styles.css"

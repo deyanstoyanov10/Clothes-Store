@@ -1,0 +1,59 @@
+<section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Create a new category</h1>
+          
+        </div>
+        <div class="col-sm-6">
+            <div class="pull-right">
+                <button class="btn btn-info" type="submit" [disabled]="!categoryForm.valid" (click)="create()"><i class="fas fa-save"></i>&nbsp;Save</button>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-info"></i>&nbsp;Category info</h3>
+          </div>
+          <div class="card-body">
+            
+            <form class="form-horizontal" [formGroup]="categoryForm">
+                <div class="card-body">
+                  <div class="form-group row">
+                      <div class="col-md-3">
+                        <label class="col-form-label" style="float: right;display: table;">Category Name</label>
+                      </div>
+                      <div class="col-md-9">
+                        <input type="text" class="form-control" formControlName="name">
+                        <div class="alert alert-danger" *ngIf="name.touched && name.errors?.required">This field is required!</div>
+                        <div class="alert alert-danger" *ngIf="name.touched && name.errors?.maxlength">Name must be less than 50 symbols!</div>
+                      </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-3">
+                      <label class="col-form-label" style="float: right;display: table;">Category Type</label>
+                    </div>
+                    <div class="col-md-9">
+                        <select class="form-control select2" style="width: 100%;" formControlName="type">
+                            <option selected="selected">Please select category type</option>
+                            <option *ngFor="let t of types" [value]="t.value">{{t.title}}</option>
+                          </select>
+                          <div class="alert alert-danger" *ngIf="type.touched && type.errors?.required">This field is required!</div>
+                          <div class="alert alert-danger" *ngIf="type?.errors?.isNumber">You must select a value!</div>
+                    </div>
+                </div>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

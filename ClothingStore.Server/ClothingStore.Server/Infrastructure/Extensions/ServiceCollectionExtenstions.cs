@@ -3,7 +3,7 @@
     using Data;
     using Models;
     using Features.Identity;
-    using Features.Category;
+    using Features.Categories;
 
     using System.Text;
 
@@ -14,6 +14,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.OpenApi.Models;
+    using ClothingStore.Server.Infrastructure.Filters;
 
     public static class ServiceCollectionExtenstions
     {
@@ -82,7 +83,7 @@
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
                 => services
                     .AddTransient<IAuthService, AuthService>()
-                    .AddTransient<ICategoryService, CategoryService>();
+                    .AddTransient<ICategoriesService, CategoriesService>();
 
         public static IServiceCollection AddSwagger(this IServiceCollection services)
             => services.AddSwaggerGen(c =>
@@ -95,6 +96,12 @@
                         Version = "v1" 
                     });
             });
+
+        public static void AddApiControllers(this IServiceCollection services)
+            => services
+                .AddControllers(options => options
+                    .Filters
+                    .Add<ModelValidOrNotFoundActionFilter>());
               
     }
 }

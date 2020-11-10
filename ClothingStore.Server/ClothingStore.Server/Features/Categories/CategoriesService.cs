@@ -1,6 +1,6 @@
-﻿namespace ClothingStore.Server.Features.Category
+﻿namespace ClothingStore.Server.Features.Categories
 {
-    using ClothingStore.Server.Features.Category.Models;
+    using ClothingStore.Server.Features.Categories.Models;
     using ClothingStore.Server.Infrastructure.Services;
     using Data;
     using Data.Enums;
@@ -10,16 +10,16 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    public class CategoryService : ICategoryService
+    public class CategoriesService : ICategoriesService
     {
         private readonly ClothingStoreDbContext context;
 
-        public CategoryService(ClothingStoreDbContext context) => this.context = context;
+        public CategoriesService(ClothingStoreDbContext context) => this.context = context;
 
-        public async Task<IEnumerable<CategoryListingServiceModel>> GetAll()
+        public async Task<IEnumerable<CategoriesListingServiceModel>> GetAll()
             => await this.context
                 .Categories
-                .Select(c => new CategoryListingServiceModel
+                .Select(c => new CategoriesListingServiceModel
                 {
                     CategoryId = c.Id,
                     Type = c.Type,
@@ -28,11 +28,11 @@
                 })
                 .ToListAsync();
 
-        public async Task<CategoryListingServiceModel> Details(int id)
+        public async Task<CategoriesListingServiceModel> Details(int id)
             => await this.context
                 .Categories
                 .Where(c => c.Id == id)
-                .Select(c => new CategoryListingServiceModel
+                .Select(c => new CategoriesListingServiceModel
                 {
                     CategoryId = c.Id,
                     Type = c.Type,
@@ -41,7 +41,7 @@
                 })
                 .FirstOrDefaultAsync();
 
-        public async Task Create(Type type, string name)
+        public async Task<int> Create(Type type, string name)
         {
             var category = new Category
             {
@@ -52,6 +52,8 @@
             await this.context.Categories.AddAsync(category);
 
             await this.context.SaveChangesAsync();
+
+            return category.Id;
         }
 
         public async Task<Result> Update(int categoryId, Type type, string name)

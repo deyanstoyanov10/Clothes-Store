@@ -1,13 +1,13 @@
-import { CategoriesService } from './../categories.service';
 import { Component, OnInit } from '@angular/core';
+import { CategoriesService } from '../categories.service';
 import { Category } from '../category.model';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: 'app-categories-list',
+  templateUrl: './categories-list.component.html',
+  styleUrls: ['./categories-list.component.css']
 })
-export class ListComponent implements OnInit {
+export class CategoriesListComponent implements OnInit {
 
   categoriesList: Array<Category>;
   constructor(private categoriesService : CategoriesService) { }
@@ -21,4 +21,5 @@ export class ListComponent implements OnInit {
       this.categoriesList = categories;
     })
   }
+
 }

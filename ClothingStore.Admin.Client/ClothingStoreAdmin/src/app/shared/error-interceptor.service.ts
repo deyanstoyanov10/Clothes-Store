@@ -14,11 +14,10 @@ export class ErrorInterceptorService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler) : Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((err) => {
-        /*err.error.forEach(element => {
+        err.error.error.forEach(element => {
           this.toastr.error(element.description);
         });
-        */
-       console.log(err);
+        console.log(err);
         return throwError(err);
       })
     )

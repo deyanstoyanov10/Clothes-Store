@@ -4,16 +4,16 @@ import { SharedModule } from './../shared/shared.module';
 import { CategoriesRoutingModule } from './categories-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListComponent } from './list/list.component';
-import { EditComponent } from './edit/edit.component';
-import { CreateComponent } from './create/create.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoriesListComponent } from './categories-list/categories-list.component';
+import { CategoriesCreateComponent } from './categories-create/categories-create.component';
+import { CategoriesEditComponent } from './categories-edit/categories-edit.component';
 
 @NgModule({
   declarations: [
-    ListComponent, 
-    EditComponent, 
-    CreateComponent
+    CategoriesListComponent,
+    CategoriesCreateComponent,
+    CategoriesEditComponent
   ],
   imports: [
     CommonModule,

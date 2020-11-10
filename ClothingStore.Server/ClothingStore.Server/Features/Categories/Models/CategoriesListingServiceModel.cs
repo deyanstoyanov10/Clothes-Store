@@ -1,8 +1,8 @@
-﻿namespace ClothingStore.Server.Features.Category.Models
+﻿namespace ClothingStore.Server.Features.Categories.Models
 {
     using ClothingStore.Server.Data.Enums;
 
-    public class CategoryListingServiceModel
+    public class CategoriesListingServiceModel
     {
         public int CategoryId { get; set; }
 

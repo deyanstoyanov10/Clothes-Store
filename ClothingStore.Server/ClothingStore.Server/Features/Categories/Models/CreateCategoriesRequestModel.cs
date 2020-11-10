@@ -1,15 +1,18 @@
-﻿namespace ClothingStore.Server.Features.Category.Models
+﻿namespace ClothingStore.Server.Features.Categories.Models
 {
     using Data.Enums;
 
     using System.ComponentModel.DataAnnotations;
 
-    public class CategoryUpdateRequestModel
+    using static Infrastructure.EntityConfigConstants;
+    public class CreateCategoriesRequestModel
     {
         [Required]
         public Type Type { get; set; }
 
         [Required]
+        [MaxLength(CategoryNameMaxLength)]
         public string Name { get; set; }
+
     }
 }

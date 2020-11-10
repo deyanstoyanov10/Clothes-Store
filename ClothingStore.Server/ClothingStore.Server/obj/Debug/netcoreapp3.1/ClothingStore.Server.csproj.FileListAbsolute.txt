@@ -78,4 +78,3 @@ D:\Visual Studio Projects\ClothesStoreApp\ClothingStore.Server\ClothingStore.Ser
 D:\Visual Studio Projects\ClothesStoreApp\ClothingStore.Server\ClothingStore.Server\obj\Debug\netcoreapp3.1\ClothingStore.Server.csproj.CoreCompileInputs.cache
 D:\Visual Studio Projects\ClothesStoreApp\ClothingStore.Server\ClothingStore.Server\obj\Debug\netcoreapp3.1\ClothingStore.Server.MvcApplicationPartsAssemblyInfo.cs
 D:\Visual Studio Projects\ClothesStoreApp\ClothingStore.Server\ClothingStore.Server\obj\Debug\netcoreapp3.1\ClothingStore.Server.MvcApplicationPartsAssemblyInfo.cache
-D:\Visual Studio Projects\ClothesStoreApp\ClothingStore.Server\ClothingStore.Server\obj\Debug\netcoreapp3.1\ClothingStore.Server.csprojAssemblyReference.cache
