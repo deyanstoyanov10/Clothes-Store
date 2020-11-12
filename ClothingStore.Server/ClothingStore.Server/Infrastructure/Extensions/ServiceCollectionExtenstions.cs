@@ -3,18 +3,22 @@
     using Data;
     using Models;
     using Features.Identity;
+    using Features.Products;
     using Features.Categories;
+    using Infrastructure.Filters;
 
     using System.Text;
 
+    using Microsoft.OpenApi.Models;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.IdentityModel.Tokens;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
-    using Microsoft.OpenApi.Models;
-    using ClothingStore.Server.Infrastructure.Filters;
+    using ClothingStore.Server.Features.Colors;
+    using ClothingStore.Server.Features.Sizes;
+    using ClothingStore.Server.Features.Pictures;
 
     public static class ServiceCollectionExtenstions
     {
@@ -83,7 +87,11 @@
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
                 => services
                     .AddTransient<IAuthService, AuthService>()
-                    .AddTransient<ICategoriesService, CategoriesService>();
+                    .AddTransient<ICategoriesService, CategoriesService>()
+                    .AddTransient<ISizesService, SizesService>()
+                    .AddTransient<IColorsService, ColorsService>()
+                    .AddTransient<IPicturesService, PicturesService>()
+                    .AddTransient<IProductsService, ProductsService>();
 
         public static IServiceCollection AddSwagger(this IServiceCollection services)
             => services.AddSwaggerGen(c =>

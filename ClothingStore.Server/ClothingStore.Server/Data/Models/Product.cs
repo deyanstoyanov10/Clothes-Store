@@ -6,9 +6,10 @@
     {
         public Product()
         {
-            this.Sizes = new HashSet<Size>();
-            this.Colors = new HashSet<Color>();
+            this.ProductSizes = new HashSet<ProductSize>();
+            this.ProductColors = new HashSet<ProductColor>();
             this.Pictures = new HashSet<Picture>();
+            this.ShoppingCartItems = new HashSet<ShoppingCartItem>();
         }
 
         public int Id { get; set; }
@@ -29,11 +30,11 @@
 
         public Category Category { get; set; }
 
-        public ShoppingCartItem ShoppingCartItem { get; set; }
+        public ICollection<ShoppingCartItem> ShoppingCartItems { get; set; }
 
-        public ICollection<Size> Sizes { get; set; }
+        public ICollection<ProductSize> ProductSizes { get; set; }
 
-        public ICollection<Color> Colors { get; set; }
+        public ICollection<ProductColor> ProductColors { get; set; }
 
         public ICollection<Picture> Pictures { get; set; }
     }

@@ -18,7 +18,11 @@
 
         public DbSet<Size> Sizes { get; set; }
 
+        public DbSet<ProductSize> ProductSizes { get; set; }
+
         public DbSet<Color> Colors { get; set; }
+
+        public DbSet<ProductColor> ProductColors { get; set; }
 
         public DbSet<Picture> Pictures { get; set; }
 
@@ -31,7 +35,9 @@
             builder.ApplyConfiguration(new CategoryConfig());
             builder.ApplyConfiguration(new ProductConfig());
             builder.ApplyConfiguration(new SizeConfig());
+            builder.ApplyConfiguration(new ProductSizeConfig());
             builder.ApplyConfiguration(new ColorConfig());
+            builder.ApplyConfiguration(new ProductColorConfig());
             builder.ApplyConfiguration(new PictureConfig());
             builder.ApplyConfiguration(new ShoppingCartConfig());
             builder.ApplyConfiguration(new ShoppingCartItemConfig());

@@ -34,18 +34,7 @@
                 .HasMaxLength(ProductSupplierUrlMaxLength);
 
             builder
-                .HasOne(sci => sci.ShoppingCartItem)
-                .WithOne(p => p.Product)
-                .HasForeignKey<ShoppingCartItem>(p => p.ProductId);
-
-            builder
-                .HasMany(s => s.Sizes)
-                .WithOne(p => p.Product)
-                .HasForeignKey(p => p.ProductId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            builder
-                .HasMany(c => c.Colors)
+                .HasMany(sci => sci.ShoppingCartItems)
                 .WithOne(p => p.Product)
                 .HasForeignKey(p => p.ProductId)
                 .OnDelete(DeleteBehavior.Cascade);

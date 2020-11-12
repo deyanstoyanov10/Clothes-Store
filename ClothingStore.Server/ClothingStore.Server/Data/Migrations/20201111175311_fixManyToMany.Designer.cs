@@ -4,14 +4,16 @@ using ClothingStore.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClothingStore.Server.Data.Migrations
 {
     [DbContext(typeof(ClothingStoreDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201111175311_fixManyToMany")]
+    partial class fixManyToMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -201,7 +203,8 @@ namespace ClothingStore.Server.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductId")
+                        .IsUnique();
 
                     b.HasIndex("ShoppingCartId");
 
@@ -472,8 +475,8 @@ namespace ClothingStore.Server.Data.Migrations
             modelBuilder.Entity("ClothingStore.Server.Data.Models.ShoppingCartItem", b =>
                 {
                     b.HasOne("ClothingStore.Server.Data.Models.Product", "Product")
-                        .WithMany("ShoppingCartItems")
-                        .HasForeignKey("ProductId")
+                        .WithOne("ShoppingCartItem")
+                        .HasForeignKey("ClothingStore.Server.Data.Models.ShoppingCartItem", "ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
